@@ -25,8 +25,5 @@ git clone https://github.com/km2262488/Kboard.git
 cd Kboard
 python key.py
 exit
-> `exit` dulu lalu buka ulang Termux biar keyboard barunya aktif.
-
-### *Catatan Penting*
-Wajib pakai Termux dari F-Droid. Versi Play Store udah nggak bisa baca `termux.properties` lagi.
+> exit dulu lalu buka ulang Termux biar keyboard barunya aktif.### *Catatan Penting*
 
