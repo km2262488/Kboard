@@ -25,5 +25,7 @@ git clone https://github.com/km2262488/Kboard.git
 cd Kboard
 python key.py
 exit
-> exit dulu lalu buka ulang Termux biar keyboard barunya aktif.### *Catatan Penting*
+> exit dulu lalu buka ulang Termux biar keyboard barunya aktif
+
+termux-reload-setting
 
