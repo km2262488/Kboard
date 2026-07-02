@@ -2,7 +2,7 @@ import os
 
 FILE_PATH = os.path.expanduser("~/.termux/termux.properties")
 
-# Layout Elang Keyboard v1.8 Clean
+# Layout Keyboard
 CONFIG_CONTENT = 'extra-keys = [["git clone ","&&","CTRL","ALT","HOME","END","DEL"],["UP","LEFT","DOWN","RIGHT","PGUP","PGDN","pip install "],["ls","cd ","pkg ","nano ","python ","clear","exit","ENTER"]]'
 
 def install():
