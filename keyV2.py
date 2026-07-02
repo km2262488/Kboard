@@ -2,7 +2,7 @@ import os
 
 FILE_PATH = os.path.expanduser("~/.termux/termux.properties")
 
-# Layout Elang Keyboard v1.9 - 9 Kolom
+# Layout Keyboard
 CONFIG_CONTENT = 'extra-keys = [["bash","git clone ","&&","CTRL","node","HOME","END","DEL","go"],["UP","LEFT","DOWN","RIGHT","PGUP","PGDN","","pip install ",""],["ls","cd ","pkg ","nano ","python ","clear","exit","ENTER",""]]'
 
 def install():
@@ -11,7 +11,7 @@ def install():
     with open(FILE_PATH, "w") as f:
         f.write(CONFIG_CONTENT + "\n")
 
-    print("[+] Keyboard Termux berhasil diupdate ke v1.9")
+    print("[+] Keyboard Termux Updated")
     print("[+] Layout: bash | git clone | && | CTRL | node | HOME | END | DEL | go")
     print("[+]         UP | LEFT | DOWN | RIGHT | PGUP | PGDN | pip install |")
     print("[+]         ls | cd | pkg | nano | python | clear | exit | ENTER |")
