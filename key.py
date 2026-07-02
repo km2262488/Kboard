@@ -1,19 +1,19 @@
 import os
 
-CONFIG_CONTENT = """extra-keys = [ \\
-['ESC','/','-','HOME','UP','END','PGUP','TAB','|','FORWARD_DEL'], \\
-['CTRL','ALT','LEFT','DOWN','RIGHT','PGDN','|','_','=','DEL'], \\
-['git add ','git commit -m ','git push ','git pull ','git status ','git log ','nano ','vim ','exit','ENTER'] \\
-]
-"""
+FILE_PATH = os.path.expanduser("~/.termux/termux.properties")
 
-path = os.path.expanduser("~/.termux/termux.properties")
+# Layout Elang Keyboard v1.8 Clean
+CONFIG_CONTENT = 'extra-keys = [["git clone ","&&","CTRL","ALT","HOME","END","DEL"],["UP","LEFT","DOWN","RIGHT","PGUP","PGDN","pip install "],["ls","cd ","pkg ","nano ","python ","clear","exit","ENTER"]]'
 
-# Bikin folder .termux kalau belum ada
-os.makedirs(os.path.dirname(path), exist_ok=True)
+def install():
+    os.makedirs(os.path.dirname(FILE_PATH), exist_ok=True)
 
-with open(path, "w") as f:
-    f.write(CONFIG_CONTENT)
+    with open(FILE_PATH, "w") as f:
+        f.write(CONFIG_CONTENT + "\n")
 
-print("✅ Sukses! File termux.properties udah dibuat")
-print("➡️  Jalanin ini biar langsung aktif: termux-reload-settings")
+    print("[+] Keyboard Termux Updated")
+    print("[+] Layout: git clone | && | pip install | python | nano | ls")
+    print("[!] Jalankan 'exit' lalu buka ulang Termux")
+
+if __name__ == "__main__":
+    install()
