@@ -1,23 +1,19 @@
 import os
 
-FILE_PATH = os.path.expanduser("~/.termux/termux.properties")
-
-# Layout Keyboard Versi Clean
-CONFIG_CONTENT = extra-keys = [ \
-['ESC','/','-','HOME','UP','END','PGUP','TAB','|','FORWARD_DEL'], \
-['CTRL','ALT','LEFT','DOWN','RIGHT','PGDN','|','_','=','DEL'], \
-['~','git clone ','&& ','|| ','| ','pip install ','nano ','vim ','exit','ENTER'] \
+CONFIG_CONTENT = """extra-keys = [ \\
+['ESC','/','-','HOME','UP','END','PGUP','TAB','|','FORWARD_DEL'], \\
+['CTRL','ALT','LEFT','DOWN','RIGHT','PGDN','|','_','=','DEL'], \\
+['git add ','git commit -m ','git push ','git pull ','git status ','git log ','nano ','vim ','exit','ENTER'] \\
 ]
+"""
 
-def install():
-    os.makedirs(os.path.dirname(FILE_PATH), exist_ok=True)
+path = os.path.expanduser("~/.termux/termux.properties")
 
-    with open(FILE_PATH, "w") as f:
-        f.write(CONFIG_CONTENT + "\n")
+# Bikin folder .termux kalau belum ada
+os.makedirs(os.path.dirname(path), exist_ok=True)
 
-    print("[+] Keyboard Termux berhasil diupdate mode Clean")
-    print("[+] Layout: git clone | && | pip install | python | nano | ls")
-    print("[!] Jalankan 'exit' lalu buka ulang Termux biar kepake")
+with open(path, "w") as f:
+    f.write(CONFIG_CONTENT)
 
-if __name__ == "__main__":
-    install()
+print("✅ Sukses! File termux.properties udah dibuat")
+print("➡️  Jalanin ini biar langsung aktif: termux-reload-settings")
