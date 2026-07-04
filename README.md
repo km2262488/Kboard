@@ -14,4 +14,6 @@ termux-reload-setting
 exit
 
 
+kembali ke keyboard default
 
+rm ~/.termux/termux.properties && termux-reload-settings
